@@ -7,11 +7,7 @@
 <div th:fragment="footer">
     <br/>
     <footer class="container">
-        <p>
-            <img th:src="@{/images/logo.jpg}" class="rounded" alt="Keyrus Digital"
-                 width="200px"/>
-            page generated in
-            <th:block th:text="${#dates.format(#dates.createNow(), 'EEE MMM dd HH:mm:ss zzz yyyy')}"></th:block>
+        <p th:text="'Page generated in ' + ${#dates.format(#dates.createNow(), 'EEE MMM dd HH:mm:ss zzz yyyy')}">
         </p>
     </footer>
 </div>
