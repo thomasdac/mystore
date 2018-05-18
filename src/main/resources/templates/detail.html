@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Detalhes do Produto</title>
+    <link rel="stylesheet" type="text/css"
+          href="/webjars/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"/>
+</head>
+<body>
+
+<div th:replace="fragments/header :: header"></div>
+
+<main role="main">
+
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-2">MyStore - Product Detail</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>id</h2>
+            </div>
+            <div class="col-md-4">
+                <h2>name</h2>
+            </div>
+            <div class="col-md-4">
+                <h2>date</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <p th:text="${product?.id}">
+                </p>
+            </div>
+            <div class="col-md-4">
+                <p th:text="${product?.name}">
+                </p>
+            </div>
+            <div class="col-md-4">
+                <p th:text="${product?.date} ? ${#dates.format(product?.date,'yyyy-MM-dd hh:mm:ss.S')} : '--'">
+                </p>
+            </div>
+        </div>
+        <hr/>
+
+        <a class="btn btn-primary btn-lg" href="javascript:history.go(-1)"
+           role="button">«« Back </a>
+    </div>
+</main>
+
+<div th:replace="fragments/footer :: footer"></div>
+
+<script type="text/javascript"
+        src="../webjars/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
+
+</body>
+</html>

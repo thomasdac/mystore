@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Lista de Produtos</title>
+    <link rel="stylesheet" type="text/css"
+          href="/webjars/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"/>
+</head>
+<body>
+
+<div th:replace="fragments/header :: header"></div>
+
+<main role="main"> <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-2">MyStore</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>name</h2>
+            </div>
+        </div>
+
+        <th:block th:each="product : ${products}">
+            <div class="row">
+                <div class="col-md-4">
+                    <p>
+                        <a th:href="@{/detail/{id}(id=${product?.id})}" th:text="${product?.name}">
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <hr/>
+        </th:block>
+
+    </div>
+</main>
+
+<div th:replace="fragments/footer :: footer"></div>
+
+<script type="text/javascript"
+        src="webjars/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
+
+</body>
+</html>

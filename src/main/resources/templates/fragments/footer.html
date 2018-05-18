@@ -1,0 +1,19 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<div th:fragment="footer">
+    <br/>
+    <footer class="container">
+        <p>
+            <img th:src="@{/images/logo.jpg}" class="rounded" alt="Keyrus Digital"
+                 width="200px"/>
+            page generated in
+            <th:block th:text="${#dates.format(#dates.createNow(), 'EEE MMM dd HH:mm:ss zzz yyyy')}"></th:block>
+        </p>
+    </footer>
+</div>
+</body>
+</html>
